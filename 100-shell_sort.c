@@ -22,7 +22,7 @@ void swap(int *a, int *b)
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t inv, i, j;
+	size_t inv = 1, i, j;
 
 	for (inv = 1; inv < size / 3; inv = inv * 3 + 1)
 		;
