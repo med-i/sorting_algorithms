@@ -31,15 +31,9 @@ void shell_sort(int *array, size_t size)
 	{
 		for (i = inv; i < size; i++)
 		{
-			for (j = i; j >= inv && array[j - inv] > array[i]; j = j - inv)
-			{
-
+			for (j = i; j >= inv && array[j - inv] > array[j]; j = j - inv)
 				swap(&array[j], &array[j - inv]);
-				if (array[j] <= array[j + inv])
-					break;
-			}
 		}
-
 		print_array(array, size);
 	}
 }
