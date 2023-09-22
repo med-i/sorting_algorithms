@@ -57,6 +57,7 @@ int lomuto(int *array, int low, int high, size_t size)
  * @array: pointer to the array
  * @low: lowest index of the array
  * @high: highest index of the array
+ * @size: size of the array
  */
 void quick_helper(int *array, int low, int high, size_t size)
 {
