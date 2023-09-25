@@ -2,8 +2,9 @@
 
 /**
  * swap_nodes - swap two nodes in a doubly linked list
- * @a: pointer to the 1st element
- * @b: pointer to the 2d element
+ * @list: poiter to pointer to the doubly linked list
+ * @node1: pointer to the 1st node
+ * @node2: pointer to the 2d node
  */
 void swap_nodes(listint_t **list, listint_t *node1, listint_t *node2)
 {
@@ -51,9 +52,7 @@ void cocktail_sort_list(listint_t **list)
 				swap_move = 1;
 			}
 			else
-			{
 				start = start->next;
-			}
 		}
 
 		if (!swap_move)
@@ -70,9 +69,7 @@ void cocktail_sort_list(listint_t **list)
 				swap_move = 1;
 			}
 			else
-			{
 				start = start->prev;
-			}
 		}
 	}
 }
