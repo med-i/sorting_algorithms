@@ -53,28 +53,28 @@ int *create_count_array(int *array, size_t size, size_t max)
 }
 
 /**
- * create_output_array - Create output array based on count and input arrays.
+ * create_sorted_array - Create sorted array based on count and input arrays.
  * @array: Input array to be sorted.
  * @count_array: Array containing element counts.
  * @size: Size of the input and count arrays.
  *
  * Return: A dynamically allocated integer array with sorted values.
  */
-int *create_output_array(int *array, int *count_array, size_t size)
+int *create_sorted_array(int *array, int *count_array, size_t size)
 {
 	int i;
-	int *output = malloc(sizeof(int) * size);
+	int *sorted = malloc(sizeof(int) * size);
 	int value, index;
 
 	for (i = size - 1; i >= 0; i--)
 	{
 		value = array[i];
 		index = count_array[value] - 1;
-		output[index] = value;
+		sorted[index] = value;
 		count_array[value]--;
 	}
 
-	return (output);
+	return (sorted);
 }
 
 /**
@@ -94,8 +94,11 @@ void counting_sort(int *array, size_t size)
 	max = find_max(array, size);
 	count_array = create_count_array(array, size, max);
 	print_array(count_array, max + 1);
-	sorted = create_output_array(array, count_array, size);
+	sorted = create_sorted_array(array, count_array, size);
 
 	for (i = 0; i < size; i++)
 		array[i] = sorted[i];
+
+	free(count_array);
+	free(sorted);
 }
